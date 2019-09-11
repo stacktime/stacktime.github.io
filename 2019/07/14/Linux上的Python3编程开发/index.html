@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | Hexo</title>
+  <title>Linux上的Python3编程开发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="Deepin操作系统下使用pychar编写开发”飞机大战”小游戏. 游戏主要函数编写函数用与加载相应图片,判断飞机位置,按键控制,碰撞控制(使用精灵组实现),边界控制等基本控制.">
+<meta name="keywords" content="Python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux上的Python3编程开发">
+<meta property="og:url" content="http://yoursite.com/2019/07/14/Linux上的Python3编程开发/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Deepin操作系统下使用pychar编写开发”飞机大战”小游戏. 游戏主要函数编写函数用与加载相应图片,判断飞机位置,按键控制,碰撞控制(使用精灵组实现),边界控制等基本控制.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-10T13:09:39.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux上的Python3编程开发">
+<meta name="twitter:description" content="Deepin操作系统下使用pychar编写开发”飞机大战”小游戏. 游戏主要函数编写函数用与加载相应图片,判断飞机位置,按键控制,碰撞控制(使用精灵组实现),边界控制等基本控制.">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,91 +159,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux上的Python3编程开发" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/11/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-11T05:46:18.335Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/11/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      Linux上的Python3编程开发
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/07/picture/" class="archive-article-date">
-  	<time datetime="2019-09-07T05:55:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+        
+        <a href="/2019/07/14/Linux上的Python3编程开发/" class="archive-article-date">
+  	<time datetime="2019-07-14T13:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/07/picture/">picture</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Deepin操作系统下使用pychar编写开发”飞机大战”小游戏.</p>
+<h2 id="游戏主要函数"><a href="#游戏主要函数" class="headerlink" title="游戏主要函数"></a>游戏主要函数</h2><p>编写函数用与加载相应图片,判断飞机位置,按键控制,碰撞控制(使用精灵组实现),边界控制等基本控制.</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line">import pygame</span><br><span class="line"></span><br><span class="line"><span class="comment"># 游戏主窗口矩形</span></span><br><span class="line">SCREEN_RECT = pygame.Rect(0, 0, 480, 852)</span><br><span class="line"><span class="comment"># 背景图片路径</span></span><br><span class="line">background_path = <span class="string">"./plane/background.png"</span></span><br><span class="line"><span class="comment"># 英雄路径</span></span><br><span class="line">hero1_path = <span class="string">"./plane/hero1.png"</span></span><br><span class="line">hero2_path = <span class="string">"./plane/hero2.png"</span></span><br><span class="line"><span class="comment"># 敌机图片路径</span></span><br><span class="line">enemy_path = <span class="string">"./plane/enemy0.png"</span></span><br><span class="line"><span class="comment"># 子弹路径</span></span><br><span class="line">bullet_path = <span class="string">"./plane/bullet.png"</span></span><br><span class="line">bullet2_path = <span class="string">"./plane/bullet1.png"</span></span><br><span class="line"><span class="comment"># 道具路径</span></span><br><span class="line">prop_path = <span class="string">"./plane/bomb.png"</span></span><br><span class="line">prop2_path = <span class="string">"./plane/bomb-1.gif"</span></span><br><span class="line"><span class="comment"># 设置事件id,创建敌机，开火,道具</span></span><br><span class="line">CREATE_ENEMY_EVENT = pygame.USEREVENT + 1</span><br><span class="line">PROP_EVENT = pygame.USEREVENT + 2</span><br><span class="line">PROP_FIRE_EVENT = pygame.USEREVENT + 3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class GamePlay(pygame.sprite.Sprite):</span><br><span class="line">    <span class="comment"># 打飞机游戏总类</span></span><br><span class="line"></span><br><span class="line">    def __init__(self, image_path, speed=2):</span><br><span class="line">        <span class="comment"># 重写init方法，调用父类</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.image = pygame.image.load(image_path)</span><br><span class="line">        self.rect = self.image.get_rect()</span><br><span class="line">        self.speed = speed</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 重写更新方法</span></span><br><span class="line">    def update(self):</span><br><span class="line">        <span class="comment"># 通过坐标，让图标动起来</span></span><br><span class="line">        self.rect.y += self.speed</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Enemy(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"敌机类"</span><span class="string">""</span></span><br><span class="line">    <span class="comment"># 重写init方法</span></span><br><span class="line">    def __init__(self):</span><br><span class="line">        <span class="comment"># 调用父类的方法</span></span><br><span class="line">        super().__init__(enemy_path)</span><br><span class="line">        <span class="comment"># 使速度随机</span></span><br><span class="line">        self.speed = random.randint(1, 5)</span><br><span class="line">        <span class="comment"># 使位置随机</span></span><br><span class="line">        <span class="comment"># SCREEN_RECT.x = 0,SCREEN_RECT.width - self.rect.width = 最大出现敌机范围</span></span><br><span class="line">        self.rect.x = random.randint(SCREEN_RECT.x, SCREEN_RECT.width - self.rect.width)</span><br><span class="line">        self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 重写update方法</span></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="keyword">if</span> self.rect.top &gt;= SCREEN_RECT.bottom:</span><br><span class="line">            self.kill()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Prop(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"道具类"</span><span class="string">""</span></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(prop_path)</span><br><span class="line">        <span class="comment"># 使速度随机</span></span><br><span class="line">        self.speed = random.randint(1, 5)</span><br><span class="line">        <span class="comment"># 使位置随机</span></span><br><span class="line">        <span class="comment"># SCREEN_RECT.x = 0,SCREEN_RECT.width - self.rect.width = 最大出现敌机范围</span></span><br><span class="line">        self.rect.x = random.randint(SCREEN_RECT.x, SCREEN_RECT.width - self.rect.width)</span><br><span class="line">        self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="keyword">if</span> self.rect.top &gt;= SCREEN_RECT.bottom:</span><br><span class="line">            self.kill()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Prop2(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"道具类2"</span><span class="string">""</span></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(prop2_path)</span><br><span class="line">        <span class="comment"># 使速度随机</span></span><br><span class="line">        self.speed = random.randint(1, 5)</span><br><span class="line">        <span class="comment"># 使位置随机</span></span><br><span class="line">        self.rect.x = random.randint(SCREEN_RECT.x, SCREEN_RECT.width - self.rect.width)</span><br><span class="line">        self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="keyword">if</span> self.rect.top &gt;= SCREEN_RECT.bottom:</span><br><span class="line">            self.kill()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Bullet(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"子弹类"</span><span class="string">""</span></span><br><span class="line">    <span class="comment"># 重写init</span></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(bullet_path, -10)</span><br><span class="line">        <span class="comment"># 改变rect属性参数</span></span><br><span class="line">        self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="keyword">if</span> self.rect.bottom &lt;= SCREEN_RECT.top:</span><br><span class="line">            self.kill()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Bullet2(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"子弹类2"</span><span class="string">""</span></span><br><span class="line">    <span class="comment"># 重写init</span></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(bullet2_path, -7)</span><br><span class="line">        <span class="comment"># 改变rect属性参数</span></span><br><span class="line">        self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="keyword">if</span> self.rect.bottom &lt;= SCREEN_RECT.top:</span><br><span class="line">            self.kill()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Hero(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"英雄类"</span><span class="string">""</span></span><br><span class="line">    def __init__(self):</span><br><span class="line">        super().__init__(hero1_path, 0)</span><br><span class="line">        self.rect.bottom = SCREEN_RECT.bottom</span><br><span class="line">        self.centerx = SCREEN_RECT.centerx</span><br><span class="line">        <span class="comment"># 创建一个精灵组，管理子弹</span></span><br><span class="line">        self.bullet_gup = pygame.sprite.Group()</span><br><span class="line">        self.bullet2_gup = pygame.sprite.Group()</span><br><span class="line"></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="keyword">if</span> self.rect.left &lt; SCREEN_RECT.left:</span><br><span class="line">            self.rect.left = SCREEN_RECT.left</span><br><span class="line">        <span class="keyword">if</span> self.rect.right &gt; SCREEN_RECT.right:</span><br><span class="line">            self.rect.right = SCREEN_RECT.right</span><br><span class="line">        <span class="keyword">if</span> self.rect.top &lt;= SCREEN_RECT.top:</span><br><span class="line">            self.rect.top = SCREEN_RECT.top</span><br><span class="line">        <span class="keyword">if</span> self.rect.bottom &gt;= SCREEN_RECT.bottom:</span><br><span class="line">            self.rect.bottom = SCREEN_RECT.bottom</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开火方法</span></span><br><span class="line">    def fire(self):</span><br><span class="line">        <span class="comment"># 创建一个子弹实例</span></span><br><span class="line">        bullet1 = Bullet()</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet1.rect.bottom = self.rect.top</span><br><span class="line">        bullet1.rect.x = self.rect.left</span><br><span class="line">        self.bullet_gup.add(bullet1)</span><br><span class="line">        <span class="comment"># 创建一个子弹实例</span></span><br><span class="line">        bullet2 = Bullet()</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet2.rect.bottom = self.rect.top - 10</span><br><span class="line">        bullet2.rect.centerx = self.rect.centerx</span><br><span class="line">        self.bullet_gup.add(bullet2)</span><br><span class="line">        <span class="comment"># 创建一个子弹实例</span></span><br><span class="line">        bullet3 = Bullet()</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet3.rect.bottom = self.rect.top</span><br><span class="line">        bullet3.rect.x = self.rect.right - 20</span><br><span class="line">        self.bullet_gup.add(bullet3)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开火方法</span></span><br><span class="line">    def fire2(self):</span><br><span class="line">        <span class="comment"># 创建一个子弹实例</span></span><br><span class="line">        bullet1 = Bullet2()</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet1.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet1.rect.x = SCREEN_RECT.left + 40</span><br><span class="line">        self.bullet2_gup.add(bullet1)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet2 = Bullet2()</span><br><span class="line">        bullet2.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet2.rect.x = SCREEN_RECT.left + 90</span><br><span class="line">        self.bullet2_gup.add(bullet2)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet3 = Bullet2()</span><br><span class="line">        bullet3.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet3.rect.x = SCREEN_RECT.left + 140</span><br><span class="line">        self.bullet2_gup.add(bullet3)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet4 = Bullet2()</span><br><span class="line">        bullet4.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet4.rect.x = SCREEN_RECT.left + 190</span><br><span class="line">        self.bullet2_gup.add(bullet4)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet5 = Bullet2()</span><br><span class="line">        bullet5.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet5.rect.x = SCREEN_RECT.left + 240</span><br><span class="line">        self.bullet2_gup.add(bullet5)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet6 = Bullet2()</span><br><span class="line">        bullet6.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet6.rect.x = SCREEN_RECT.left + 290</span><br><span class="line">        self.bullet2_gup.add(bullet6)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet7 = Bullet2()</span><br><span class="line">        bullet7.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet7.rect.x = SCREEN_RECT.left + 340</span><br><span class="line">        self.bullet2_gup.add(bullet7)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet8 = Bullet2()</span><br><span class="line">        bullet8.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet8.rect.x = SCREEN_RECT.left + 390</span><br><span class="line">        self.bullet2_gup.add(bullet8)</span><br><span class="line">        <span class="comment"># 把子弹放到飞机的顶部</span></span><br><span class="line">        bullet9 = Bullet2()</span><br><span class="line">        bullet9.rect.top = SCREEN_RECT.bottom</span><br><span class="line">        bullet9.rect.x = SCREEN_RECT.left + 440</span><br><span class="line">        self.bullet2_gup.add(bullet9)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 移动方法</span></span><br><span class="line">    def move(self, direct):</span><br><span class="line">        <span class="keyword">if</span> direct == <span class="string">"right"</span>:</span><br><span class="line">            self.rect.right += 5</span><br><span class="line">        <span class="keyword">if</span> direct == <span class="string">"left"</span>:</span><br><span class="line">            self.rect.left -= 5</span><br><span class="line">        <span class="keyword">if</span> direct == <span class="string">"up"</span>:</span><br><span class="line">            self.rect.top -= 5</span><br><span class="line">        <span class="keyword">if</span> direct == <span class="string">"down"</span>:</span><br><span class="line">            self.rect.bottom += 5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Background(GamePlay):</span><br><span class="line">    <span class="string">""</span><span class="string">"背景类"</span><span class="string">""</span></span><br><span class="line">    <span class="comment"># 重写 __init__</span></span><br><span class="line">    def __init__(self, is_alternative=False):</span><br><span class="line">        super().__init__(background_path)</span><br><span class="line">        <span class="comment"># 判断背景图片是否为备用，是的话把它放在顶部</span></span><br><span class="line">        <span class="keyword">if</span> is_alternative:</span><br><span class="line">            self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line">    def update(self):</span><br><span class="line">        super().update()</span><br><span class="line">        <span class="comment"># 判断背景是否移除，移出则放到顶部</span></span><br><span class="line">        <span class="keyword">if</span> self.rect.top &gt;= SCREEN_RECT.bottom:</span><br><span class="line">            self.rect.bottom = SCREEN_RECT.top</span><br><span class="line"></span><br><span class="line"><span class="comment"># ==================================================</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class PlaneGame(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        <span class="comment"># 创建一个游戏主窗口</span></span><br><span class="line">        self.screen = pygame.display.set_mode((480, 852))</span><br><span class="line">        <span class="comment"># 创建一个游戏时钟</span></span><br><span class="line">        self.clock = pygame.time.Clock()</span><br><span class="line">        <span class="comment"># 创建一个英雄</span></span><br><span class="line">        self.hero = Hero()</span><br><span class="line">        <span class="comment"># 创建一个英雄组,并把相关英雄放进组</span></span><br><span class="line">        self.hero_gup = pygame.sprite.Group()</span><br><span class="line">        self.hero_gup.add(self.hero)</span><br><span class="line">        <span class="comment"># 创建一个敌机</span></span><br><span class="line">        self.enemy = Enemy()</span><br><span class="line">        <span class="comment"># 创建一个敌机组，并把敌机放进去</span></span><br><span class="line">        self.enemy_gup = pygame.sprite.Group()</span><br><span class="line">        self.enemy_gup.add(self.enemy)</span><br><span class="line">        <span class="comment"># 创建一个道具</span></span><br><span class="line">        self.prop = Prop()</span><br><span class="line">        <span class="comment"># 创建一个道具组</span></span><br><span class="line">        self.prop_gup = pygame.sprite.Group()</span><br><span class="line">        self.prop_gup.add(self.prop)</span><br><span class="line">        <span class="comment"># 创建一个道具2</span></span><br><span class="line">        self.prop2 = Prop2()</span><br><span class="line">        <span class="comment"># 创建一个道具组</span></span><br><span class="line">        self.prop2_gup = pygame.sprite.Group()</span><br><span class="line">        self.prop2_gup.add(self.prop2)</span><br><span class="line">        <span class="comment"># 创建2个背景</span></span><br><span class="line">        self.background_1 = Background(True)</span><br><span class="line">        self.background_2 = Background()</span><br><span class="line">        <span class="comment"># 创建一个背景组，并把背景放入</span></span><br><span class="line">        self.background_gup = pygame.sprite.Group()</span><br><span class="line">        self.background_gup.add(self.background_1, self.background_2)</span><br><span class="line">        <span class="comment"># 设置定时器，并把相关时间与定时器相关联,timer(时间id， 时间间隔(单位毫秒))</span></span><br><span class="line">        pygame.time.set_timer(CREATE_ENEMY_EVENT, 500)</span><br><span class="line">        pygame.time.set_timer(PROP_EVENT, 20000)</span><br><span class="line">        pygame.time.set_timer(PROP_FIRE_EVENT, 5000)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 键盘监听</span></span><br><span class="line">    def key_listen(self):</span><br><span class="line">        <span class="comment"># 获取键盘按键</span></span><br><span class="line">        key = pygame.key.get_pressed()</span><br><span class="line">        <span class="comment"># 判断那个按键按下</span></span><br><span class="line">        <span class="keyword">if</span> key[pygame.K_RIGHT] or key[pygame.K_d]:</span><br><span class="line">            self.hero.move(<span class="string">"right"</span>)</span><br><span class="line">        <span class="keyword">if</span> key[pygame.K_LEFT] or key[pygame.K_a]:</span><br><span class="line">            self.hero.move(<span class="string">"left"</span>)</span><br><span class="line">        <span class="keyword">if</span> key[pygame.K_UP] or key[pygame.K_w]:</span><br><span class="line">            self.hero.move(<span class="string">"up"</span>)</span><br><span class="line">        <span class="keyword">if</span> key[pygame.K_DOWN] or key[pygame.K_s]:</span><br><span class="line">            self.hero.move(<span class="string">"down"</span>)</span><br><span class="line">        <span class="keyword">if</span> key[pygame.K_j]:</span><br><span class="line">            self.hero.fire()</span><br><span class="line">        <span class="keyword">if</span> key[pygame.K_k]:</span><br><span class="line">            self.hero.fire2()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 其他监听</span></span><br><span class="line">    def event_listen(self):</span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">            <span class="comment"># 判断是否退出</span></span><br><span class="line">            <span class="keyword">if</span> event.type == pygame.QUIT:</span><br><span class="line">                pygame.quit()</span><br><span class="line">                <span class="built_in">exit</span>()</span><br><span class="line">            <span class="comment"># 判断是否创造敌机</span></span><br><span class="line">            <span class="keyword">if</span> event.type == CREATE_ENEMY_EVENT:</span><br><span class="line">                enemy_bak = Enemy()</span><br><span class="line">                self.enemy_gup.add(enemy_bak)</span><br><span class="line">            <span class="keyword">if</span> event.type == PROP_EVENT:</span><br><span class="line">                prop_bak = Prop()</span><br><span class="line">                self.prop_gup.add(prop_bak)</span><br><span class="line">            <span class="keyword">if</span> event.type == PROP_FIRE_EVENT:</span><br><span class="line">                prop2 = Prop2()</span><br><span class="line">                self.prop2_gup.add(prop2)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 检测碰撞</span></span><br><span class="line">    def check_collide(self, status=True):</span><br><span class="line">        <span class="comment"># （子弹组，敌机组）碰撞的状态</span></span><br><span class="line">        pygame.sprite.groupcollide(self.hero.bullet_gup, self.enemy_gup, True, True)</span><br><span class="line">        pygame.sprite.groupcollide(self.hero.bullet2_gup, self.enemy_gup, False, True)</span><br><span class="line">        <span class="comment"># 道具和飞机接触</span></span><br><span class="line">        li = pygame.sprite.groupcollide(self.hero_gup, self.prop_gup, False, True)</span><br><span class="line">        <span class="keyword">if</span> len(li) &gt; 0:</span><br><span class="line">            self.enemy_gup.empty()</span><br><span class="line">        li2 = pygame.sprite.groupcollide(self.hero_gup, self.prop2_gup, False, True)</span><br><span class="line">        <span class="keyword">if</span> len(li2) &gt; 0:</span><br><span class="line">            self.hero.fire2()</span><br><span class="line">        <span class="comment"># 判断 （精灵， 组）碰撞的状态</span></span><br><span class="line">        length = pygame.sprite.spritecollide(self.hero, self.enemy_gup, status)</span><br><span class="line">        <span class="keyword">if</span> status and len(length) &gt; 0:</span><br><span class="line">            self.hero.kill()</span><br><span class="line">            self.game_quit()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 更新所有精灵组位置</span></span><br><span class="line">    def update_sprite(self):</span><br><span class="line">        self.enemy_gup.update()</span><br><span class="line">        self.hero_gup.update()</span><br><span class="line">        self.background_gup.update()</span><br><span class="line">        self.hero.bullet_gup.update()</span><br><span class="line">        self.hero.bullet2_gup.update()</span><br><span class="line">        self.prop_gup.update()</span><br><span class="line">        self.prop2_gup.update()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 所有精灵组都绘制图层</span></span><br><span class="line">    def draw_sprites(self):</span><br><span class="line">        self.background_gup.draw(self.screen)</span><br><span class="line">        self.hero_gup.draw(self.screen)</span><br><span class="line">        self.enemy_gup.draw(self.screen)</span><br><span class="line">        self.hero.bullet_gup.draw(self.screen)</span><br><span class="line">        self.hero.bullet2_gup.draw(self.screen)</span><br><span class="line">        self.prop_gup.draw(self.screen)</span><br><span class="line">        self.prop2_gup.draw(self.screen)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 退出游戏</span></span><br><span class="line">    @staticmethod</span><br><span class="line">    def game_quit():</span><br><span class="line">        pygame.quit()</span><br><span class="line">        <span class="built_in">exit</span>()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 图像绑定</span></span><br><span class="line">    @staticmethod</span><br><span class="line">    def image_switch(image_path, sprite):</span><br><span class="line">        sprite.image = pygame.image.load(image_path)</span><br></pre></td></tr></table></figure>
+
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><p>进行游戏运行逻辑的编写.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">from fuction import *</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    judge = 0</span><br><span class="line">    game = PlaneGame()</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        <span class="comment"># 游戏帧数</span></span><br><span class="line">        game.clock.tick(60)</span><br><span class="line">        <span class="comment"># 动态变化</span></span><br><span class="line">        <span class="keyword">if</span> judge % 2 == 0:</span><br><span class="line">            game.image_switch(hero2_path, game.hero)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            game.image_switch(hero1_path, game.hero)</span><br><span class="line">        <span class="comment"># 监听事件</span></span><br><span class="line">        game.event_listen()</span><br><span class="line">        game.key_listen()</span><br><span class="line">        <span class="comment"># 碰撞</span></span><br><span class="line">        game.check_collide()</span><br><span class="line">        <span class="comment"># 更新位置</span></span><br><span class="line">        game.update_sprite()</span><br><span class="line">        <span class="comment"># 添加图层</span></span><br><span class="line">        game.draw_sprites()</span><br><span class="line">        <span class="comment"># 显示图片</span></span><br><span class="line">        pygame.display.update()</span><br><span class="line">        <span class="comment"># 动态计数</span></span><br><span class="line">        judge += 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asstes/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asstes/images/wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Python3</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/14/Linux上的Python3编程开发/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/07/picture/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          picture
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/06/04/Android&Java手机通讯录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android&amp;Java手机通讯录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#游戏主要函数"><span class="toc-number">1.</span> <span class="toc-text">游戏主要函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主函数"><span class="toc-number">2.</span> <span class="toc-text">主函数</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -261,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

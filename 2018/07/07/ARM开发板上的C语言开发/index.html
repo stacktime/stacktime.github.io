@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | Hexo</title>
+  <title>ARM开发板上的C语言开发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="Linux上开发编译C语言程序,使用SCRT通过串口将可执行文件传输到ARM开发板,运行程序.实现 图片显示,音乐播放,拍照,串口通信等功能.">
+<meta name="keywords" content="C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARM开发板上的C语言开发">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/ARM开发板上的C语言开发/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Linux上开发编译C语言程序,使用SCRT通过串口将可执行文件传输到ARM开发板,运行程序.实现 图片显示,音乐播放,拍照,串口通信等功能.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-10T13:04:56.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="ARM开发板上的C语言开发">
+<meta name="twitter:description" content="Linux上开发编译C语言程序,使用SCRT通过串口将可执行文件传输到ARM开发板,运行程序.实现 图片显示,音乐播放,拍照,串口通信等功能.">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,91 +159,203 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ARM开发板上的C语言开发" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/11/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-11T05:46:18.335Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/11/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      ARM开发板上的C语言开发
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/07/picture/" class="archive-article-date">
-  	<time datetime="2019-09-07T05:55:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+        
+        <a href="/2018/07/07/ARM开发板上的C语言开发/" class="archive-article-date">
+  	<time datetime="2018-07-07T12:59:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/07/picture/">picture</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux上开发编译C语言程序,使用SCRT通过串口将可执行文件传输到ARM开发板,运行程序.实现 图片显示,音乐播放,拍照,串口通信等功能.</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h2 id="图片显示"><a href="#图片显示" class="headerlink" title="图片显示"></a>图片显示</h2><p>初始化屏幕,把图片数据按像素点写入,注意此次使用屏幕像素左下角位0,0;因此图片想要正常显示,需要反转图片数据之后写入.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">int touch_bmp(char *path,int x,int y,int l,int w)</span><br><span class="line">&#123;</span><br><span class="line">	char bmp_buf[l*w*3];</span><br><span class="line">	int lcd_buf[l*w];</span><br><span class="line">	int temp_buf[l*w];</span><br><span class="line">	int m,n,i,j;</span><br><span class="line">	//打开文件(bmp和lcd屏幕)</span><br><span class="line">	int lcd_fd=open(<span class="string">"/dev/fb0"</span>,O_RDWR);</span><br><span class="line">	<span class="keyword">if</span>(lcd_fd&lt;0)</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"lct_fd open error"</span>);</span><br><span class="line">		<span class="built_in">return</span> -1;</span><br><span class="line">	&#125;</span><br><span class="line">	int bmp_fd=open(path,O_RDWR);</span><br><span class="line">	<span class="keyword">if</span>(bmp_fd&lt;0)</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"bmp_buf open error!"</span>);</span><br><span class="line">		<span class="built_in">return</span> -1;</span><br><span class="line">	&#125;</span><br><span class="line">	//把图片写入屏幕</span><br><span class="line">	lseek(bmp_fd,54,SEEK_SET);</span><br><span class="line">	int ret=<span class="built_in">read</span>(bmp_fd,bmp_buf,l*w*3);</span><br><span class="line">	//写入</span><br><span class="line">	//三字节转四字节</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;l*w;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		lcd_buf[i]=bmp_buf[3*i]|bmp_buf[3*i+1]&lt;&lt;8|bmp_buf[3*i+2]&lt;&lt;16|0x00&lt;&lt;24;</span><br><span class="line">	&#125;</span><br><span class="line">	//代码翻转图片</span><br><span class="line">	<span class="keyword">for</span>(m=0;m&lt;l;m++)//m列</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(n=0;n&lt;w;n++)</span><br><span class="line">		&#123;</span><br><span class="line">			temp_buf[(w-1-n)*l+m]=lcd_buf[n*l+m];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	int *lcdmmap=mmap(</span><br><span class="line">		NULL,//映射首地址，一般位null，系统自动分配</span><br><span class="line">		800*480*4,//映射大小</span><br><span class="line">		PROT_READ|PROT_WRITE,//权限</span><br><span class="line">		MAP_SHARED,//设置为共享模式</span><br><span class="line">		lcd_fd,//lcd文件描述符</span><br><span class="line">		0//偏移量，一般为0</span><br><span class="line">					  );</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;w;i++)//图片480行</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=0;j&lt;l;j++)//800列</span><br><span class="line">		&#123;</span><br><span class="line">			*(lcdmmap+y*800+x+i*800+j)=temp_buf[i*l+j];//从左往右一行一行刷</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//关闭屏幕</span><br><span class="line">	munmap(lcdmmap,800*480*4);</span><br><span class="line">	close(bmp_fd);</span><br><span class="line">	close(lcd_fd);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="音乐播放"><a href="#音乐播放" class="headerlink" title="音乐播放"></a>音乐播放</h2><p>这里为了方便,静态写入本地5首歌曲到数组,每首歌曲写入4张图片到数组,方便之后调用.写好播放的各个动作函数并确定动作对应的音乐和图片行为,最后在music函数里面整合,注意每首歌曲对应的图片以及轮播动作的设置.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">int s=0;</span><br><span class="line">int i=0;</span><br><span class="line">int music_i=0;</span><br><span class="line">char music_a[5][20]=&#123;<span class="string">"0.mp3"</span>,<span class="string">"1.mp3"</span>,<span class="string">"2.mp3"</span>,<span class="string">"3.mp3"</span>,<span class="string">"4.mp3"</span>&#125;;</span><br><span class="line">char music_b[5][4][20]=&#123;</span><br><span class="line">						<span class="string">"/my/3/0/1.jpg"</span>,<span class="string">"/my/3/0/2.jpg"</span>,<span class="string">"/my/3/0/3.jpg"</span>,<span class="string">"/my/3/0/4.jpg"</span>,</span><br><span class="line">						<span class="string">"/my/3/1/1.jpg"</span>,<span class="string">"/my/3/1/2.jpg"</span>,<span class="string">"/my/3/1/3.jpg"</span>,<span class="string">"/my/3/1/4.jpg"</span>,</span><br><span class="line">						<span class="string">"/my/3/2/1.jpg"</span>,<span class="string">"/my/3/2/2.jpg"</span>,<span class="string">"/my/3/2/3.jpg"</span>,<span class="string">"/my/3/2/4.jpg"</span>,</span><br><span class="line">						<span class="string">"/my/3/3/1.jpg"</span>,<span class="string">"/my/3/3/2.jpg"</span>,<span class="string">"/my/3/3/3.jpg"</span>,<span class="string">"/my/3/3/4.jpg"</span>,</span><br><span class="line">						<span class="string">"/my/3/4/1.jpg"</span>,<span class="string">"/my/3/4/2.jpg"</span>,<span class="string">"/my/3/4/3.jpg"</span>,<span class="string">"/my/3/4/4.jpg"</span>,</span><br><span class="line">						&#125;;</span><br><span class="line">						</span><br><span class="line">						</span><br><span class="line">//						lcd_draw_jpg(0,0,music_b[music_i][i],NULL,0,0);</span><br><span class="line"></span><br><span class="line">void play_go()//继续播放</span><br><span class="line">&#123;</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/13.2.bmp"</span>,350,380,100,100);//显示暂停图片</span><br><span class="line">	system(<span class="string">"killall -CONT madplay"</span>);//继续播放</span><br><span class="line">	s=1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void play_down()//暂停</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(s==1)</span><br><span class="line">	&#123;</span><br><span class="line">		touch_bmp(<span class="string">"/my/ico/13.1.bmp"</span>,350,380,100,100);//显示播放图片</span><br><span class="line">		system(<span class="string">"killall -STOP madplay"</span>);//暂停</span><br><span class="line">		s=2;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		play_go();	 </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void play()//播放</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(s==0)</span><br><span class="line">	&#123;</span><br><span class="line">		char buf[20]=&#123;0&#125;;</span><br><span class="line">		sprintf(buf,<span class="string">"madplay %s &amp;"</span>,music_a[music_i]);</span><br><span class="line">		system(buf);</span><br><span class="line">		lcd_draw_jpg(0,0,music_b[music_i][i],NULL,0,0);//背景</span><br><span class="line">		touch_bmp(<span class="string">"/my/ico/13.2.bmp"</span>,350,380,100,100);//显示暂停图片</span><br><span class="line">		s=1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		play_down();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void up()//上一曲</span><br><span class="line">&#123;</span><br><span class="line">	char buf[20]=&#123;0&#125;;</span><br><span class="line">	system(<span class="string">"killall -KILL madplay"</span>);//退出</span><br><span class="line">	music_i--;</span><br><span class="line">		<span class="keyword">if</span>(music_i&lt;0)</span><br><span class="line">		&#123;</span><br><span class="line">			music_i=4;</span><br><span class="line">		&#125;</span><br><span class="line">	sprintf(buf,<span class="string">"madplay %s &amp;"</span>,music_a[music_i]);</span><br><span class="line">	system(buf);//播放</span><br><span class="line">	lcd_draw_jpg(0,0,music_b[music_i][i],NULL,0,0);//背景</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/13.2.bmp"</span>,350,380,100,100);//显示暂停图片</span><br><span class="line">	s=1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void down()//下一曲</span><br><span class="line">&#123;</span><br><span class="line">	char buf[20]=&#123;0&#125;;</span><br><span class="line">	system(<span class="string">"killall -KILL madplay"</span>);//退出</span><br><span class="line">	music_i++;</span><br><span class="line">		<span class="keyword">if</span>(music_i&gt;4)</span><br><span class="line">		&#123;</span><br><span class="line">			music_i=0;</span><br><span class="line">		&#125;</span><br><span class="line">	sprintf(buf,<span class="string">"madplay %s &amp;"</span>,music_a[music_i]);</span><br><span class="line">	system(buf);//播放</span><br><span class="line">	lcd_draw_jpg(0,0,music_b[music_i][i],NULL,0,0);//背景</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/13.2.bmp"</span>,350,380,100,100);//显示暂停图片</span><br><span class="line">	s=1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int music(int x,int y)//音乐</span><br><span class="line">&#123;</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/10.bmp"</span>,0,0,800,480);//音乐背景</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/11.bmp"</span>,0,0,100,50);//返回图</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/18.bmp"</span>,0,380,800,100);//底色</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/14.1.bmp"</span>,150,380,100,100);//上一曲图</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/13.1.bmp"</span>,350,380,100,100);//播放图</span><br><span class="line">	touch_bmp(<span class="string">"/my/ico/14.2.bmp"</span>,550,380,100,100);//下一曲图</span><br><span class="line">	<span class="keyword">while</span>(1)</span><br><span class="line">	&#123;</span><br><span class="line">		touch(&amp;x,&amp;y);</span><br><span class="line">		<span class="keyword">if</span>(x&gt;0&amp;&amp;x&lt;100&amp;&amp;y&gt;430&amp;&amp;y&lt;480)//返回</span><br><span class="line">			&#123;</span><br><span class="line">			system(<span class="string">"killall -KILL madplay"</span>);</span><br><span class="line">			<span class="built_in">return</span> 0;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;350&amp;&amp;x&lt;450&amp;&amp;y&gt;0&amp;&amp;y&lt;100)//播放</span><br><span class="line">				play();</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;150&amp;&amp;x&lt;250&amp;&amp;y&gt;0&amp;&amp;y&lt;100)//上一曲</span><br><span class="line">					up();</span><br><span class="line">					<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;550&amp;&amp;x&lt;650&amp;&amp;y&gt;0&amp;&amp;y&lt;100)//下一曲</span><br><span class="line">						down();</span><br><span class="line">						<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;700&amp;&amp;y&lt;100)//下一页</span><br><span class="line">						&#123;</span><br><span class="line">							i++;</span><br><span class="line">							<span class="keyword">if</span>(i&gt;3)</span><br><span class="line">							&#123;</span><br><span class="line">								i=0;</span><br><span class="line">							&#125;</span><br><span class="line">							lcd_draw_jpg(0,0,music_b[music_i][i],NULL,0,0);//背景</span><br><span class="line">						&#125;</span><br><span class="line">							<span class="keyword">else</span> <span class="keyword">if</span>(x&lt;100&amp;&amp;y&lt;100)//下一页</span><br><span class="line">							&#123;</span><br><span class="line">								i--;</span><br><span class="line">								<span class="keyword">if</span>(i&gt;0)</span><br><span class="line">								&#123;</span><br><span class="line">									i=3;</span><br><span class="line">								&#125;</span><br><span class="line">								lcd_draw_jpg(0,0,music_b[music_i][i],NULL,0,0);//背景</span><br><span class="line">							&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h2><p>初始化,启动摄像头是库文件里写好的,直接调用,将摄像头获取的数据存到本地的同时发送到手机上.每次退出函数需要关闭硬件占用.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">int do_camera()</span><br><span class="line">&#123;</span><br><span class="line">	int jpg_fd;</span><br><span class="line">	</span><br><span class="line">	udpser_init();//初始化</span><br><span class="line">	pthread_t ctid;//建立子进程</span><br><span class="line">	pthread_create(&amp;ctid,NULL,get_data,NULL);</span><br><span class="line">	</span><br><span class="line">	linux_v4l2_yuyv_init(<span class="string">"/dev/video3"</span>);//初始化摄像头</span><br><span class="line">	linux_v4l2_start_yuyv_capturing();//开始启动摄像头采集</span><br><span class="line">	<span class="keyword">while</span>(1)</span><br><span class="line">	&#123;</span><br><span class="line">		linux_v4l2_get_yuyv_data (&amp;jpg_buf);//将获取到的摄像头数据显示</span><br><span class="line">		lcd_draw_jpg(0,0,NULL,jpg_buf.jpg_data,jpg_buf.jpg_size,0);//0代表不减半	</span><br><span class="line">		<span class="keyword">if</span>(video_flag == 1)</span><br><span class="line">		&#123;</span><br><span class="line">		    //将采集的图片数据发送到手机上</span><br><span class="line">			<span class="keyword">if</span>(sendto(sockfd, jpg_buf.jpg_data,jpg_buf.jpg_size, 0, (struct sockaddr *)&amp;client, client_len)&lt;0)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"sendto failed\n"</span>);</span><br><span class="line">				<span class="built_in">return</span> ;</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>((x&gt;640&amp;&amp;x&lt;800)&amp;&amp;(y&gt;160&amp;&amp;y&lt;320))//抓拍</span><br><span class="line">		&#123;</span><br><span class="line">			sprintf(jpg_capture,<span class="string">"%d.jpg"</span>,jpg_name);</span><br><span class="line">			jpg_fd=open(jpg_capture,O_RDWR|O_CREAT,0777);</span><br><span class="line">			<span class="keyword">if</span>(jpg_fd&lt;0)</span><br><span class="line">			&#123;</span><br><span class="line">				perror(<span class="string">"open error!"</span>);</span><br><span class="line">				<span class="built_in">return</span> -1;</span><br><span class="line">			&#125;</span><br><span class="line">			write(jpg_fd,jpg_buf.jpg_data,jpg_buf.jpg_size);</span><br><span class="line">			close(jpg_fd);</span><br><span class="line">			sprintf(cmd_buf,<span class="string">"tftp 169.254.166.21 -p -l %s"</span>,jpg_capture);</span><br><span class="line">			system(cmd_buf);</span><br><span class="line">			jpg_name++;</span><br><span class="line">			x=0;</span><br><span class="line">			y=0;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>((x&gt;640&amp;&amp;x&lt;800)&amp;&amp;(y&gt;0&amp;&amp;y&lt;160))//相册</span><br><span class="line">			show_jpg();</span><br><span class="line">		<span class="keyword">if</span>((x&gt;640&amp;&amp;x&lt;800)&amp;&amp;(y&gt;320&amp;&amp;y&lt;480))	//关闭</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	  linux_v4l2_yuyv_quit();//关闭摄像头</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h2><p>这里串口是用来寻找RFID卡,并读取卡内数据.流程为:初始化串口-请求天线范围的卡-防碰撞-获取范围内最大ID-输出卡ID.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define DEV_PATH "/dev/s3c2410_serial1"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/* 设置窗口参数:9600速率 */</span><br><span class="line">void init_tty(int fd)</span><br><span class="line">&#123;    </span><br><span class="line">	//声明设置串口的结构体</span><br><span class="line">	struct termios termios_new;</span><br><span class="line">	//先清空该结构体</span><br><span class="line">	bzero( &amp;termios_new, sizeof(termios_new));</span><br><span class="line">	//	cfmakeraw()设置终端属性，就是设置termios结构中的各个参数。</span><br><span class="line">	cfmakeraw(&amp;termios_new);</span><br><span class="line">	//设置波特率</span><br><span class="line">	//termios_new.c_cflag=(B9600);</span><br><span class="line">	cfsetispeed(&amp;termios_new, B9600);</span><br><span class="line">	cfsetospeed(&amp;termios_new, B9600);</span><br><span class="line">	//CLOCAL和CREAD分别用于本地连接和接受使能，因此，首先要通过位掩码的方式激活这两个选项。    </span><br><span class="line">	termios_new.c_cflag |= CLOCAL | CREAD;</span><br><span class="line">	//通过掩码设置数据位为8位</span><br><span class="line">	termios_new.c_cflag &amp;= ~CSIZE;</span><br><span class="line">	termios_new.c_cflag |= CS8; </span><br><span class="line">	//设置无奇偶校验</span><br><span class="line">	termios_new.c_cflag &amp;= ~PARENB;</span><br><span class="line">	//一位停止位</span><br><span class="line">	termios_new.c_cflag &amp;= ~CSTOPB;</span><br><span class="line">	tcflush(fd,TCIFLUSH);</span><br><span class="line">	// 可设置接收字符和等待时间，无特殊要求可以将其设置为0</span><br><span class="line">	termios_new.c_cc[VTIME] = 0;</span><br><span class="line">	termios_new.c_cc[VMIN] = 1;</span><br><span class="line">	// 用于清空输入/输出缓冲区</span><br><span class="line">	tcflush (fd, TCIFLUSH);</span><br><span class="line">	//完成配置后，可以使用以下函数激活串口设置</span><br><span class="line">	<span class="keyword">if</span>(tcsetattr(fd,TCSANOW,&amp;termios_new) )</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Setting the serial1 failed!\n"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">/*计算校验和*/</span><br><span class="line">unsigned char CalBCC(unsigned char *buf, int n)</span><br><span class="line">&#123;</span><br><span class="line">	int i;</span><br><span class="line">	unsigned char bcc=0;</span><br><span class="line">	<span class="keyword">for</span>(i = 0; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		bcc ^= *(buf+i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> (~bcc);</span><br><span class="line">&#125;</span><br><span class="line">//请求寻卡</span><br><span class="line">int PiccRequest(int fd)</span><br><span class="line">&#123;</span><br><span class="line">	unsigned char WBuf[128], RBuf[128];</span><br><span class="line">	int  ret, i,len;</span><br><span class="line">	fd_set rdfd;</span><br><span class="line">	</span><br><span class="line">	memset(WBuf, 0, 128);//清空  bzero();</span><br><span class="line">	memset(RBuf,0,128);</span><br><span class="line">	WBuf[0] = 0x07;	//帧长= 7 Byte</span><br><span class="line">	WBuf[1] = 0x02;	//包号= 0 , 命令类型= 0x01</span><br><span class="line">	WBuf[2] = 0x41;	//命令= <span class="string">'A'</span></span><br><span class="line">	WBuf[3] = 0x01;	//信息长度= 1</span><br><span class="line">	WBuf[4] = 0x52;	//请求模式:  ALL=0x52  DLE：待机模式</span><br><span class="line">	WBuf[5] = CalBCC(WBuf, WBuf[0]-2);		//校验和</span><br><span class="line">	WBuf[6] = 0x03; 	//结束标志</span><br><span class="line"></span><br><span class="line">	FD_ZERO(&amp;rdfd);</span><br><span class="line">	FD_SET(fd,&amp;rdfd);</span><br><span class="line">	tcflush (fd, TCIFLUSH);</span><br><span class="line">	write(fd, WBuf, 7);</span><br><span class="line">	//你如何得知读卡器是否给你应答，---》通过select去监测串口的文件描述符看是否可读</span><br><span class="line">	ret = select(fd + 1,&amp;rdfd, NULL,NULL,&amp;timeout);</span><br><span class="line">	switch(ret)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> -1:</span><br><span class="line">			perror(<span class="string">"select error\n"</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span>  0:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Request timed out.\n"</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		default:</span><br><span class="line">			usleep(10000);</span><br><span class="line">			ret = <span class="built_in">read</span>(fd, RBuf, 8);</span><br><span class="line">			len = ret;</span><br><span class="line">			ret = <span class="built_in">read</span>(fd, RBuf+len, 8);</span><br><span class="line">			len +=ret;</span><br><span class="line">			<span class="keyword">if</span> (len &lt; 0)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"len = %d, %m\n"</span>, len, errno);</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (RBuf[2] == 0x00)	 	//应答帧状态部分为0 则请求成功</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">return</span> 0;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*防碰撞，获取范围内最大ID*/</span><br><span class="line">int PiccAnticoll(int fd)</span><br><span class="line">&#123;</span><br><span class="line">	unsigned char WBuf[128], RBuf[128];</span><br><span class="line">	int ret, i,len;</span><br><span class="line">	fd_set rdfd;;</span><br><span class="line">	memset(WBuf, 0, 128);</span><br><span class="line">	memset(RBuf,0,128);</span><br><span class="line">	WBuf[0] = 0x08;	//帧长= 8 Byte</span><br><span class="line">	WBuf[1] = 0x02;	//包号= 0 , 命令类型= 0x02</span><br><span class="line">	WBuf[2] = 0x42;	//命令= <span class="string">'B'</span></span><br><span class="line">	WBuf[3] = 0x02;	//信息长度= 2</span><br><span class="line">	WBuf[4] = 0x93;	//防碰撞0x93 --一级防碰撞</span><br><span class="line">	WBuf[5] = 0x00;	//位计数0</span><br><span class="line">	WBuf[6] = CalBCC(WBuf, WBuf[0]-2);		//校验和</span><br><span class="line">	WBuf[7] = 0x03; 	//结束标志</span><br><span class="line">	tcflush (fd, TCIFLUSH);</span><br><span class="line">	FD_ZERO(&amp;rdfd);</span><br><span class="line">	FD_SET(fd,&amp;rdfd);</span><br><span class="line">	write(fd, WBuf, 8);</span><br><span class="line">	//你如何得知读卡器是否给你应答，---》通过select去监测串口的文件描述符看是否可读</span><br><span class="line">	ret = select(fd + 1,&amp;rdfd, NULL,NULL,&amp;timeout);</span><br><span class="line">	switch(ret)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> -1:</span><br><span class="line">			perror(<span class="string">"select error\n"</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span>  0:</span><br><span class="line">			perror(<span class="string">"Timeout:"</span>);</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		default:</span><br><span class="line">			usleep(10000);</span><br><span class="line">                        ret = <span class="built_in">read</span>(fd, RBuf, 10);</span><br><span class="line">                        len = ret;</span><br><span class="line">                        ret = <span class="built_in">read</span>(fd, RBuf+len, 10);</span><br><span class="line">                        len +=ret;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (len &lt; 0)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"len = %d, %m\n"</span>, len, errno);</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (RBuf[2] == 0x00) //应答帧状态部分为0 则获取ID 成功</span><br><span class="line">			&#123;</span><br><span class="line">				cardid = (RBuf[4]&lt;&lt;24) | (RBuf[5]&lt;&lt;16) | (RBuf[6]&lt;&lt;8) | RBuf[7];</span><br><span class="line">				<span class="built_in">return</span> 0;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int card(int argc,char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">	int ret, i;</span><br><span class="line">	int fd;</span><br><span class="line"></span><br><span class="line">	//打开串口</span><br><span class="line">	fd = open(DEV_PATH, O_RDWR | O_NOCTTY | O_NONBLOCK);</span><br><span class="line">	<span class="keyword">if</span> (fd &lt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		fprintf(stderr, <span class="string">"Open Gec210_ttySAC1 fail!\n"</span>);</span><br><span class="line">		<span class="built_in">return</span> -1;</span><br><span class="line">	&#125;</span><br><span class="line">	/*初始化串口*/</span><br><span class="line">	init_tty(fd);</span><br><span class="line">	timeout.tv_sec = 5;//</span><br><span class="line">	timeout.tv_usec = 0;//微秒</span><br><span class="line">	</span><br><span class="line">		/*请求天线范围的卡*/</span><br><span class="line">		<span class="keyword">if</span> ( PiccRequest(fd) )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"The request failed!\n"</span>);</span><br><span class="line">			close(fd);</span><br><span class="line">			<span class="built_in">return</span> -1;</span><br><span class="line">		&#125;</span><br><span class="line">		/*进行防碰撞，获取天线范围内最大的ID*/</span><br><span class="line">		<span class="keyword">if</span>( PiccAnticoll(fd) )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Couldn't get card-id!\n"</span>);</span><br><span class="line">			close(fd);</span><br><span class="line">			<span class="built_in">return</span> -1;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"card ID = %x\n"</span>, cardid);</span><br><span class="line">	close(fd);</span><br><span class="line">	<span class="keyword">if</span>(cardid=0x5e77627a)</span><br><span class="line">		<span class="built_in">return</span> 1;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">return</span> 0;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><p>确定好主页面的样式以及不同动作和触发点.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int x=0;</span><br><span class="line">	int y=0;</span><br><span class="line">	int i=1;</span><br><span class="line">	<span class="keyword">if</span>(i==1)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(1)</span><br><span class="line">		&#123;					//         x    y   l   w</span><br><span class="line">			touch_bmp(<span class="string">"/my/ico/10.bmp"</span>,0,0,800,480);</span><br><span class="line">			touch_bmp(<span class="string">"/my/ico/15.bmp"</span>,150,190,100,100);</span><br><span class="line">			touch_bmp(<span class="string">"/my/ico/16.bmp"</span>,350,190,100,100);</span><br><span class="line">			touch_bmp(<span class="string">"/my/ico/17.bmp"</span>,550,190,100,100);</span><br><span class="line">			<span class="keyword">while</span>(1)</span><br><span class="line">			&#123;</span><br><span class="line">				touch(&amp;x,&amp;y);</span><br><span class="line">				<span class="keyword">if</span>(x&gt;150&amp;&amp;x&lt;250&amp;&amp;y&gt;180&amp;&amp;y&lt;280)</span><br><span class="line">				&#123;</span><br><span class="line">					picture(x,y);</span><br><span class="line">					<span class="built_in">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">					<span class="keyword">if</span>(x&gt;350&amp;&amp;x&lt;450&amp;&amp;y&gt;180&amp;&amp;y&lt;280)</span><br><span class="line">					&#123;</span><br><span class="line">						music(x,y);</span><br><span class="line">						<span class="built_in">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">						<span class="keyword">if</span>(x&gt;550&amp;&amp;x&lt;650&amp;&amp;y&gt;180&amp;&amp;y&lt;280)</span><br><span class="line">						&#123;</span><br><span class="line">							camera();</span><br><span class="line">							<span class="built_in">break</span>;</span><br><span class="line">						&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asstes/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asstes/images/wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/07/ARM开发板上的C语言开发/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/01/05/ZigBee环境监测/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ZigBee环境监测
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/06/15/C++&SQL实现银行管理系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++&amp;SQL实现银行管理系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -261,8 +378,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

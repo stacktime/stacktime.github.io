@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | Hexo</title>
+  <title>C语言实现交通咨询系统_弗洛依达算法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="实现各个城市间路程,花费,时间的不同计算.城市之间路程,时间,花费事先静态写入到数组中. 主函数12345678910111213141516171819202122int main()&amp;#123;int choice;while(choice)&amp;#123;	printf(&quot;           ^_^欢迎进入交通咨询系统^_^\n&quot;);	printf(&quot;*********************">
+<meta name="keywords" content="C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言实现交通咨询系统_弗洛依达算法">
+<meta property="og:url" content="http://yoursite.com/2017/12/04/C语言实现交通咨询系统-弗洛依达算法/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="实现各个城市间路程,花费,时间的不同计算.城市之间路程,时间,花费事先静态写入到数组中. 主函数12345678910111213141516171819202122int main()&amp;#123;int choice;while(choice)&amp;#123;	printf(&quot;           ^_^欢迎进入交通咨询系统^_^\n&quot;);	printf(&quot;*********************">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-10T13:08:33.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="C语言实现交通咨询系统_弗洛依达算法">
+<meta name="twitter:description" content="实现各个城市间路程,花费,时间的不同计算.城市之间路程,时间,花费事先静态写入到数组中. 主函数12345678910111213141516171819202122int main()&amp;#123;int choice;while(choice)&amp;#123;	printf(&quot;           ^_^欢迎进入交通咨询系统^_^\n&quot;);	printf(&quot;*********************">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,91 +159,209 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C语言实现交通咨询系统-弗洛依达算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/11/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-11T05:46:18.335Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/11/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      C语言实现交通咨询系统_弗洛依达算法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/07/picture/" class="archive-article-date">
-  	<time datetime="2019-09-07T05:55:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+        
+        <a href="/2017/12/04/C语言实现交通咨询系统-弗洛依达算法/" class="archive-article-date">
+  	<time datetime="2017-12-04T14:25:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/07/picture/">picture</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实现各个城市间路程,花费,时间的不同计算.城市之间路程,时间,花费事先静态写入到数组中.</p>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int choice;</span><br><span class="line"><span class="keyword">while</span>(choice)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"           ^_^欢迎进入交通咨询系统^_^\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"****************************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                       $$菜单$$                   ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏1 =&gt;两城市间信息查询            0 =&gt; 退出系统     ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                                                  ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"****************************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入您的选择：\n"</span>);</span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;choice);</span><br><span class="line">		switch(choice)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> 1:CityMenu();<span class="built_in">break</span>;</span><br><span class="line">			<span class="keyword">case</span> 0:<span class="built_in">printf</span>(<span class="string">"您已安全退出系统.\n"</span>);<span class="built_in">printf</span>(<span class="string">"欢迎您下次再使用本系统!^_^\n"</span>);<span class="built_in">break</span>;</span><br><span class="line">			default:<span class="built_in">printf</span>(<span class="string">"没有此选项.请重选.\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<a id="more"></a>
+
+<h3 id="信息查询"><a href="#信息查询" class="headerlink" title="信息查询"></a>信息查询</h3><p>分为 路程,时间,花费三种查询方式.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">void CityMenu()</span><br><span class="line">&#123;	</span><br><span class="line">	int v1,v2;</span><br><span class="line">	MGraph G;</span><br><span class="line">	CreateMGraph(G);</span><br><span class="line">	int choice;</span><br><span class="line">	<span class="keyword">while</span>(choice)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"***************************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                   $$信息$$                     ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                                                ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏1.路程   2.时间    3.花费   0 =&gt; 退出系统       ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                                                ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"***************************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入您的选择：\n"</span>);</span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;choice);</span><br><span class="line">	<span class="keyword">if</span>(choice==1||choice==2||choice==3)</span><br><span class="line">		&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"***************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏1.北京   2.长春   3.成都   4.大连   ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏5.福州   6.广州   7.贵阳   8.西安   ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"***************************************\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		switch(choice)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> 1:Shortest_Distance(G,v1,v2);<span class="built_in">break</span>;</span><br><span class="line">			<span class="keyword">case</span> 2:Shortest_Time(G,v1,v2);<span class="built_in">break</span>;	</span><br><span class="line">			<span class="keyword">case</span> 3:Shortest_Cost(G,v1,v2);<span class="built_in">break</span>;</span><br><span class="line">			<span class="keyword">case</span> 0:<span class="built_in">printf</span>(<span class="string">"您已退出.\n"</span>);<span class="built_in">break</span>;</span><br><span class="line">	     	default:<span class="built_in">printf</span>(<span class="string">"没有此选项.请重选.\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="弗洛依达算法-以路程为例"><a href="#弗洛依达算法-以路程为例" class="headerlink" title="弗洛依达算法,以路程为例"></a>弗洛依达算法,以路程为例</h4><p>判断,如果输入正确,三个for循环嵌套,递推求出每一对顶点间的最短距离.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">void Shortest_Distance(MGraph G,int v1,int v2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入始发站城市的代号："</span>);</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;v1);</span><br><span class="line">	<span class="keyword">if</span>(v1&lt;=0||v1&gt;8)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"您输入的城市代号不存在，请重新选择输入！\n"</span>);</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入终点站城市的代号："</span>);</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;v2);</span><br><span class="line">	<span class="keyword">if</span>(v2&lt;=0||v2&gt;8)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"您输入的城市代号不存在，请重新选择输入！\n"</span>);</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(v1==v2)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"您输入的城市代码重复了，请确认后再进行操作！\n"</span>);</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=G.vexnum;i++)        //初始化数组a</span><br><span class="line">		<span class="keyword">for</span>(int j=1;j&lt;=G.vexnum;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			G.a[i][j]=G.distance[i][j];</span><br><span class="line">			<span class="keyword">if</span>((i!=j)&amp;&amp;(G.a[i][j]&lt;INFINITY))</span><br><span class="line">				G.path_F[i][j]=i;</span><br><span class="line">			<span class="keyword">else</span> </span><br><span class="line">				G.path_F[i][j]=0;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(int m=1;m&lt;=G.vexnum;m++)       //递推求解每一对顶点间的最短距离</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=1;i&lt;=G.vexnum;i++)</span><br><span class="line">			<span class="keyword">for</span>(int j=1;j&lt;=G.vexnum;j++)</span><br><span class="line">				<span class="keyword">if</span>(G.a[i][m]+G.a[m][j]&lt;G.a[i][j])   //从i经m到j的一条路径更短则进行如下操作</span><br><span class="line">				&#123;</span><br><span class="line">					G.a[i][j]=G.a[i][m]+G.a[m][j];</span><br><span class="line">					G.path_F[i][j]=G.path_F[m][j];</span><br><span class="line">				&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	int q[8];</span><br><span class="line">	i=1;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"始发站：%s  终点站：%s"</span>,G.city[v1],G.city[v2]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"最短路程为：%d(公里)"</span>,G.a[v1][v2]);</span><br><span class="line">	int n=G.path_F[v1][v2];</span><br><span class="line">	q[i]=v2;</span><br><span class="line">	i++;</span><br><span class="line">	<span class="keyword">while</span>(n!=v1)</span><br><span class="line">	&#123;</span><br><span class="line">		q[i]=n;</span><br><span class="line">		i++;    </span><br><span class="line">		n=G.path_F[v1][n];</span><br><span class="line">	&#125;</span><br><span class="line">	q[i]=v1;</span><br><span class="line">	int t=0,c=0;</span><br><span class="line">	<span class="keyword">for</span>(int z=i;z-1&gt;0;z--)</span><br><span class="line">	&#123;</span><br><span class="line">		t=t+G.time[q[z]][q[z-1]];</span><br><span class="line">		c=c+G.cost[q[z]][q[z-1]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"耗时：%d（小时）所需花费：%d（元）"</span>,t,c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"按该最短路程行走的路线为：%s"</span>,G.city[q[i]]);</span><br><span class="line">	<span class="keyword">for</span> ( z=i-1;z&gt;=1;z--)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"→%s"</span>,G.city[q[z]]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asstes/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asstes/images/wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/04/C语言实现交通咨询系统-弗洛依达算法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/06/15/C++&SQL实现银行管理系统/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++&amp;SQL实现银行管理系统
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/06/01/C语言编写实现的银行管理系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C语言编写实现的银行管理系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主函数"><span class="toc-number">1.</span> <span class="toc-text">主函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息查询"><span class="toc-number">1.1.</span> <span class="toc-text">信息查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#弗洛依达算法-以路程为例"><span class="toc-number">1.1.1.</span> <span class="toc-text">弗洛依达算法,以路程为例</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -261,8 +384,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
