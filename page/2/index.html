@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://stacktime.github.io">
-  <title>Tag: RFID | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hexo blog">
 <meta name="keywords" content="stacktime,王元博">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://stacktime.github.io/tags/RFID/index.html">
+<meta property="og:url" content="https://stacktime.github.io/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo blog">
 <meta property="og:locale" content="zh-CN">
@@ -158,34 +158,40 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-C语言实现交通咨询系统-弗洛依达算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/10/RFID&C物流追踪系统/" class="archive-article-date">
-  	<time datetime="2019-01-10T14:55:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/10/RFID&C物流追踪系统/">RFID&amp;C物流追踪系统</a>
+      <a class="article-title" href="/2017/12/04/C语言实现交通咨询系统-弗洛依达算法/">C语言实现交通咨询系统_弗洛依达算法</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/04/C语言实现交通咨询系统-弗洛依达算法/" class="archive-article-date">
+  	<time datetime="2017-12-04T14:25:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
+</a>
+		<!-- 添加代码 -->
+        
+		
+		
+		<!-- 添加完成 -->
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实现各个城市间路程,花费,时间的不同计算.城市之间路程,时间,花费事先静态写入到数组中.</p>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int choice;</span><br><span class="line"><span class="keyword">while</span>(choice)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"           ^_^欢迎进入交通咨询系统^_^\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"****************************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                       $$菜单$$                   ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏1 =&gt;两城市间信息查询            0 =&gt; 退出系统     ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"▏                                                  ▏\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"****************************************************\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入您的选择：\n"</span>);</span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;choice);</span><br><span class="line">		switch(choice)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> 1:CityMenu();<span class="built_in">break</span>;</span><br><span class="line">			<span class="keyword">case</span> 0:<span class="built_in">printf</span>(<span class="string">"您已安全退出系统.\n"</span>);<span class="built_in">printf</span>(<span class="string">"欢迎您下次再使用本系统!^_^\n"</span>);<span class="built_in">break</span>;</span><br><span class="line">			default:<span class="built_in">printf</span>(<span class="string">"没有此选项.请重选.\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,27 +199,129 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
-      		 
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/04/C语言实现交通咨询系统-弗洛依达算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C语言编写实现的银行管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/C语言编写实现的银行管理系统/">C语言编写实现的银行管理系统</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/01/C语言编写实现的银行管理系统/" class="archive-article-date">
+  	<time datetime="2017-06-01T14:05:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
+</a>
+		<!-- 添加代码 -->
+        
+		
+		
+		<!-- 添加完成 -->
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用C语言和VC++6.0编译运行银行管理系统,实现银行基本功能.</p>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><p>运行程序后直接看到的界面.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int m=1;</span><br><span class="line">	int zhiling;</span><br><span class="line">	<span class="keyword">while</span>(m==1)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" ================================================================ \n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" ||                                                            ||\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" ||                  中国银行综合业务管理系统                  ||\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" ||                                                            ||\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" ================================================================ \n\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"管理员登录输入1按回车键结束         消费者登录输入2按回车键结束 \n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请输入您的指令:  "</span>);</span><br><span class="line">		scanf(<span class="string">"%d"</span>,&amp;zhiling);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		switch(zhiling)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> 1:                                        //管理员</span><br><span class="line">			 gly();</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		<span class="keyword">case</span> 2:                                        //消费者</span><br><span class="line">			xfz();</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">RFID</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/01/C语言编写实现的银行管理系统/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -262,10 +370,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
